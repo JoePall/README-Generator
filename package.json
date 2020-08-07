@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoePall/README-Generator.git"
+    "url": "git+https://github.com/JoePall/read.me.git"
   },
   "author": "Josiah Powell",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JoePall/README-Generator/issues"
+    "url": "https://github.com/JoePall/read.me/issues"
   },
-  "homepage": "https://github.com/JoePall/README-Generator#readme"
+  "homepage": "https://github.com/JoePall/read.me#readme"
 }
