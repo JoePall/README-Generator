@@ -2,18 +2,14 @@ const { makeBadge, ValidationError } = require('badge-maker');
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-    console.log("generateMarkdown: started");
     let { title, description, tableOfContents, installation, usage, license, contributing, tests, questions } = data;
 
-    console.log("makeBadge: started");
     const licenseBadge = makeBadge({
         label: 'license',
         message: license,
         color: 'red',
     });
-    console.log("makeBadge: ended");
 
-    console.log("generateMarkdown: ended");
     return `${licenseBadge}
     
 # ${title}

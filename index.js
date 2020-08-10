@@ -2,7 +2,7 @@ const fs = require('fs');
 const { prompt } = require('inquirer');
 const util = require("util");
 const generateMarkdown = require('./utils/generateMarkdown');
-import { generateMarkdown } from "generateMarkdown";
+//import generateMarkdown from "./utils/generateMarkdown.js";
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -85,26 +85,17 @@ const questions = [
 
 // function to write a file
 function writeToFile(fileName, data) {
-    console.log("writeToFile: started");
-
     writeFileAsync(fileName, data).then(() => {
-        console.log("Finished!");
-    });
-    
-    console.log("writeToFile: ended");
+        console.log("Readme.md written!");
+    });    
 }
 
 // function to initialize program
 function init() {
-    console.log("init: started");
-
     prompt(questions).then(response => {
         var markdown = generateMarkdown(response);
-        console.log(markdown);
         writeToFile("readme.md", markdown);
     });
-
-    console.log("init: ended");
 }
 
 // function call to initialize program
