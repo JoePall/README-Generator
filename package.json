@@ -4,6 +4,7 @@
   "description": "This is a simple application that allows you to build a readme file from the command line.",
   "main": "index.js",
   "dependencies": {
+    "badge-maker": "^3.2.0",
     "inquirer": "^7.3.3"
   },
   "devDependencies": {},

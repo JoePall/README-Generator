@@ -1,37 +1,7 @@
 const inquirer = require('inquirer');
+const { makeBadge, ValidationError } = require('badge-maker')
 
-function prompt(type, name, message, finished, recursive, responses = []) {
-    var tempName = name + responses.length;
-
-    inquirer.prompt([
-        {
-            type: type,
-            name: tempName,
-            message: message,
-        },
-    ])
-    .then(response => {
-        responses.push(response[tempName]);
-        if (!recursive) return responses
-        inquirer.prompt([{
-            type: 'confirm',
-            name: 'askAgain',
-            message: "Would you like to add another " + name + "? (press enter for YES)?",
-            default: true,
-        }])
-            .then((confirmResponse => {
-                if (confirmResponse.askAgain) prompt(type, name, message, finished, recursive, responses);
-                else finished(responses);
-            }));
-    });
-}
-
-prompt('input', 'question', "Write a question:", response => {
-    console.log(response);
-}, true);
-
-// WHEN I am prompted for information about my application repository
-// THEN a quality, professional README.md is generated with the title of your project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+// sections entitled 
 // WHEN I enter my project title
 // THEN this is displayed as the title of the README
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
@@ -47,7 +17,67 @@ prompt('input', 'question', "Write a question:", response => {
 
 // array of questions for user
 const questions = [
-
+    {
+        type: 'input',
+        name: 'title',
+        message: 'Title: ',
+    },
+    {
+        type: 'editor',
+        name: 'description',
+        message: 'Description: ',
+    },
+    {
+        type: 'editor',
+        name: 'tableOfContents',
+        message: 'Table of Contents: ',
+    },
+    {
+        type: 'editor',
+        name: 'installation',
+        message: 'Installation: ',
+    },
+    {
+        type: 'editor',
+        name: 'usage',
+        message: 'Usage: ',
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'License: ',
+        choices: [
+            'None',
+            'Apache License 2.0',
+            'GNU General Public License v3.0',
+            'MIT License',
+            'BSD 2 - Clause "Simplified" License',
+            'BSD 3 - Clause "New" or "Revised" License',
+            'Boost Software License 1.0',
+            'Creative Commons Zero v1.0 Universal',
+            'Eclipse Public License 2.0',
+            'GNU Affero General Public License v3.0',
+            'GNU General Public License v2.0',
+            'GNU Lesser General Public License v2.1',
+            'Mozilla Public License 2.0',
+            'The Unlicense',
+        ],
+    },
+    {
+        type: 'editor',
+        name: 'contributing',
+        message: 'Contributing: ',
+    },
+    {
+        type: 'editor',
+        name: 'tests',
+        message: 'Tests: ',
+    },
+    {
+        type: 'editor',
+        name: 'questions',
+        message: 'Questions: ',
+    },
 ];
 
 // function to write README file
@@ -56,7 +86,9 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-
+    inquirer.prompt(questions).then(response => {
+        console.log(response);
+    });
 }
 
 // function call to initialize program
