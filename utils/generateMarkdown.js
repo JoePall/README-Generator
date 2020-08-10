@@ -9,7 +9,7 @@ function generateMarkdown(data) {
     const licenseBadge = makeBadge({
         label: 'license',
         message: license,
-        color: 'green',
+        color: 'red',
     });
     console.log("makeBadge: ended");
 

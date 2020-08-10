@@ -1,14 +1,12 @@
-const { makeBadge, ValidationError } = require('badge-maker');
 const fs = require('fs');
-const inquirer = require('inquirer');
+const { prompt } = require('inquirer');
 const util = require("util");
+const generateMarkdown = require('./utils/generateMarkdown');
+import { generateMarkdown } from "generateMarkdown";
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
-// sections entitled 
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
 // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
 // WHEN I choose a license for my application from a list of options
@@ -85,34 +83,28 @@ const questions = [
     },
 ];
 
-// function to write README file
+// function to write a file
 function writeToFile(fileName, data) {
-    let { title, description, tableOfContents, installation, usage, license, contributing, tests, questions } = data;
-    const licenseBadge = makeBadge({
-        label: 'license',
-        message: license,
-        color: 'green',
+    console.log("writeToFile: started");
+
+    writeFileAsync(fileName, data).then(() => {
+        console.log("Finished!");
     });
-
-    let template = `${licenseBadge}
     
-    # ${title}
-    
-    ${description}
-    
-    ${tableOfContents}
-    
-    ## Installation`;
-
-
-    
+    console.log("writeToFile: ended");
 }
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(response => {
-        console.log(response);
+    console.log("init: started");
+
+    prompt(questions).then(response => {
+        var markdown = generateMarkdown(response);
+        console.log(markdown);
+        writeToFile("readme.md", markdown);
     });
+
+    console.log("init: ended");
 }
 
 // function call to initialize program
