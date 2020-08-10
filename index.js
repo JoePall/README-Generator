@@ -1,6 +1,10 @@
-const inquirer = require('inquirer');
+const { makeBadge, ValidationError } = require('badge-maker');
 const fs = require('fs');
-const { makeBadge, ValidationError } = require('badge-maker')
+const inquirer = require('inquirer');
+const util = require("util");
+
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // sections entitled 
 // WHEN I enter my project title
@@ -84,7 +88,11 @@ const questions = [
 // function to write README file
 function writeToFile(fileName, data) {
     let { title, description, tableOfContents, installation, usage, license, contributing, tests, questions } = data;
-    const licenseBadge = makeBadge(format);
+    const licenseBadge = makeBadge({
+        label: 'license',
+        message: license,
+        color: 'green',
+    });
 
     let template = `${licenseBadge}
     
@@ -95,6 +103,7 @@ function writeToFile(fileName, data) {
     ${tableOfContents}
     
     ## Installation`;
+
 
     
 }
