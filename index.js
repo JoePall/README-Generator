@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const { makeBadge, ValidationError } = require('badge-maker')
 
 // sections entitled 
@@ -82,6 +83,20 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    let { title, description, tableOfContents, installation, usage, license, contributing, tests, questions } = data;
+    const licenseBadge = makeBadge(format);
+
+    let template = `${licenseBadge}
+    
+    # ${title}
+    
+    ${description}
+    
+    ${tableOfContents}
+    
+    ## Installation`;
+
+    
 }
 
 // function to initialize program
