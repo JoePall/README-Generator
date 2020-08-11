@@ -4,16 +4,9 @@ const { makeBadge, ValidationError } = require('badge-maker');
 function generateMarkdown(data) {
     let { title, description, github, email, repo, installation, usage, license, contributing, tests } = data;
     
-    const licenseBadge = makeBadge({
-        label: 'license',
-        message: license,
-        color: '#322200',
-        style: 'flat',
-    });
-
     return `[![Enhancements](https://img.shields.io/github/issues/${github}/${repo}/enhancement.svg)](https://github.com/${github}/${repo}/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+sort%3Areactions-%2B1-desc)
 [![Bugs](https://img.shields.io/github/issues/${github}/${repo}/bug.svg)](https://github.com/${github}/${repo}/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
-[![License](License: ${license})](https://img.shields.io/badge/style-${license}-green?style=flat-square)
+[![License](https://img.shields.io/badge/License-${license.replace(" ", "%20")}-green?style=flat-square.svg)]
 
 # ${title}
 
