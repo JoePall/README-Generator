@@ -6,8 +6,8 @@
 
 <p>This is a CLI app for generating readme.md files.</p>
 
-<img alt="readme 2020 in Action (screenshot #1)" src="assets/screenshots/screenshot-1.png">
-<img alt="readme 2020 in Action (screenshot #2)" src="assets/screenshots/screenshot-2.png">
+<img alt="readme 2020 in Action (screenshot #1)" src="assets/screenshots/screenshot-1.PNG">
+<img alt="readme 2020 in Action (screenshot #2)" src="assets/screenshots/screenshot-2.PNG">
 
 
 ## Questions
