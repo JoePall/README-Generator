@@ -2,7 +2,6 @@ const { writeFile } = require('fs');
 const { prompt } = require('inquirer');
 const { promisify } = require("util");
 const generateMarkdown = require('./utils/generateMarkdown');
-
 const writeFileAsync = promisify(writeFile);
 
 const questions = [
@@ -76,9 +75,8 @@ const questions = [
 
 // function to write a file
 function writeToFile(fileName, data) {
-    writeFileAsync(fileName, data).then(() => {
-        console.log("Readme.md written!");
-    });
+    var response = writeFileAsync(fileName, data);
+    console.log("Readme.md written!");
 }
 
 // function to initialize program

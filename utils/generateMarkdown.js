@@ -23,13 +23,21 @@ function generateMarkdown(data) {
         style: 'plastic',
     });
 
-    console.log(description.length);
-
     return `<a href="https://github.com/${github}/${repo}/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc">${featuresBadge}</a>
+
 <a href="https://github.com/${github}/${repo}/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3Abug">${issuesBadge}</a>
+
 ${licenseBadge}
 
-<h1>${title}</h1>
+# ${title}
+
+## In this article
+
+${description.length != 0 ? "<a href='#Description'>Description</a>\n" : ""}
+${installation.length != 0 ? "<a href='#Installation'>Installation</a>\n" : ""}
+${usage.length != 0 ? "<a href='#Usage'>Usage</a>\n" : ""}
+<a href='#Questions'>Questions</a>\n
+${description.length != 0 ? "<a href='#license'>License</a>\n" : ""}
 
 ${description.length != 0 ? "## Description" + "\n<p>" + description.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}${installation.length != 0 ? "## Installation" + "\n<p>" + installation.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}${usage.length != 0 ? "## Usage" + "\n<p>" + usage.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}${tests.length != 0 ? "## Tests" + "\n<p>" + tests.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}
 
