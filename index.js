@@ -1,10 +1,9 @@
-const fs = require('fs');
-const inquirer = require('inquirer');
-const util = require("util");
+const { writeFile } = require('fs');
+const { prompt } = require('inquirer');
+const { promisify } = require("util");
 const generateMarkdown = require('./utils/generateMarkdown');
 
-const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.writeFile);
+const writeFileAsync = promisify(writeFile);
 
 const questions = [
     {
@@ -21,6 +20,11 @@ const questions = [
         type: 'input',
         name: 'repo',
         message: 'Repository name: ',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Email: ',
     },
     {
         type: 'list',
@@ -68,11 +72,6 @@ const questions = [
         name: 'tests',
         message: 'Tests: ',
     },
-    {
-        type: 'editor',
-        name: 'questions',
-        message: 'Questions: ',
-    },
 ];
 
 // function to write a file
@@ -84,7 +83,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(response => {
+    prompt(questions).then(response => {
         var markdown = generateMarkdown(response);
         writeToFile("readme.md", markdown);
     });
