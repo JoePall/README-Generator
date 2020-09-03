@@ -1,11 +1,10 @@
-[![Enhancements](https://img.shields.io/github/issues/JoePall/read.me/enhancement.svg)](https://github.com/JoePall/read.me/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+sort%3Areactions-%2B1-desc)
-[![Bugs](https://img.shields.io/github/issues/JoePall/read.me/bug.svg)](https://github.com/JoePall/read.me/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
-[![License](https://img.shields.io/badge/License-MIT%20License-green?style=flat-square.svg)]
+![Enhancements](https://img.shields.io/github/issues/JoePall/read.me/enhancement.svg)](https://github.com/JoePall/read.me/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+sort%3Areactions-%2B1-desc)
+![Bugs](https://img.shields.io/github/issues/JoePall/read.me/bug.svg)](https://github.com/JoePall/read.me/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
+![License](https://img.shields.io/badge/License-MIT%20License-green?style=flat-square.svg)
 
 # readme 2020
 
 ## Table of contents
-<hr>
 
 <!--ts-->
 * [Table of contents](#table-of-contents)
@@ -20,7 +19,7 @@
 
 <p>This project allows you to easily create a readme markdown file directly from the CLI in VS Code.</p>
 
-<iframe src="https://drive.google.com/file/d/1V6uk8XwuBDPYEMt3AeCndUwXFFsqKnMy/preview" width="640" height="480"></iframe>
+<a href="https://drive.google.com/file/d/1V6uk8XwuBDPYEMt3AeCndUwXFFsqKnMy/preview">https://drive.google.com/file/d/1V6uk8XwuBDPYEMt3AeCndUwXFFsqKnMy/preview</a>
 
 ## Installation
 
