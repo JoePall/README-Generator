@@ -4,11 +4,28 @@ const { makeBadge, ValidationError } = require('badge-maker');
 function generateMarkdown(data) {
     let { title, description, github, email, repo, installation, usage, license, contributing, tests } = data;
     
+    let tableOfContents = `## Table of contents
+<hr>
+
+<!--ts-->
+* [Table of contents](#table-of-contents)\n`;
+    tableOfContents += (description.length > 0) ? "* [Description](#description)\n" : "";
+    tableOfContents += (installation.length > 0) ? "* [Installation](#installation)\n" : "";
+    tableOfContents += (usage.length > 0) ? "* [Usage](#usage)\n" : "";
+    tableOfContents += (contributing.length > 0) ? "* [Contributing](#contributing)\n" : "";
+    tableOfContents += (tests.length > 0) ? "* [Tests](#tests)\n" : "";
+    tableOfContents += (tests.length > 0) ? "* [Questions](#questions)\n" : "";
+    tableOfContents += (tests.length > 0) ? "* [License](#license)\n" : "";
+    tableOfContents += `<!--te-->`;
+
+
     return `[![Enhancements](https://img.shields.io/github/issues/${github}/${repo}/enhancement.svg)](https://github.com/${github}/${repo}/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+sort%3Areactions-%2B1-desc)
 [![Bugs](https://img.shields.io/github/issues/${github}/${repo}/bug.svg)](https://github.com/${github}/${repo}/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
 [![License](https://img.shields.io/badge/License-${license.replace(" ", "%20")}-green?style=flat-square.svg)]
 
 # ${title}
+
+${tableOfContents}
 
 ${description.length > 0 ? "## Description" + "\n\n<p>" + description.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}${installation.length > 0 ? "## Installation" + "\n\n<p>" + installation.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}${usage.length > 0 ? "## Usage" + "\n\n<p>" + usage.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}${tests.length > 0 ? "## Tests" + "\n\n<p>" + tests.replace(/\n/g, "\n\n") + "</p>\n\n" : ""}
 
