@@ -1,6 +1,6 @@
 [![Enhancements](https://img.shields.io/github/issues/JoePall/read.me/enhancement.svg)](https://github.com/JoePall/read.me/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement+sort%3Areactions-%2B1-desc)
 [![Bugs](https://img.shields.io/github/issues/JoePall/read.me/bug.svg)](https://github.com/JoePall/read.me/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
-[![License](https://img.shields.io/badge/License-MIT%20License-green?style=flat-square.svg)]
+![License](https://img.shields.io/badge/License-MIT%20License-green?style=flat-square.svg)
 
 # readme 2020
 
