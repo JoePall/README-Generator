@@ -4,9 +4,23 @@
 
 # readme 2020
 
+## Table of contents
+<hr>
+
+<!--ts-->
+* [Table of contents](#table-of-contents)
+* [Description](#description)
+* [Installation](#installation)
+* [Questions](#questions)
+* [License](#license)
+<!--te-->
+
+
 ## Description
 
 <p>This project allows you to easily create a readme markdown file directly from the CLI in VS Code.</p>
+
+<iframe src="https://drive.google.com/file/d/1V6uk8XwuBDPYEMt3AeCndUwXFFsqKnMy/preview" width="640" height="480"></iframe>
 
 ## Installation
 
