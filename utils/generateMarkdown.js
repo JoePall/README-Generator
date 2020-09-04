@@ -14,8 +14,8 @@ function generateMarkdown(data) {
     tableOfContents += (usage.length > 0) ? "* [Usage](#usage)\n" : "";
     tableOfContents += (contributing.length > 0) ? "* [Contributing](#contributing)\n" : "";
     tableOfContents += (tests.length > 0) ? "* [Tests](#tests)\n" : "";
-    tableOfContents += (tests.length > 0) ? "* [Questions](#questions)\n" : "";
-    tableOfContents += (tests.length > 0) ? "* [License](#license)\n" : "";
+    tableOfContents += "* [Questions](#questions)\n";
+    tableOfContents += "* [License](#license)\n";
     tableOfContents += `<!--te-->`;
 
 
